@@ -41,7 +41,6 @@ const ContactForm: React.FC = () => {
           service: '단체세탁',
           message: ''
         });
-        // 5초 후 다시 입력 가능 상태로 변경
         setTimeout(() => setStatus('idle'), 5000);
       } else {
         setStatus('error');
@@ -64,8 +63,23 @@ const ContactForm: React.FC = () => {
               <p className="text-gray-400 leading-relaxed text-lg">
                 정기 단체 세탁부터 고난도 특수 세탁까지, 
                 귀사의 요구사항에 최적화된 견적을 제안해 드립니다. 
-                전화 한 통이면 충분합니다.
+                전문 상담원이 상세히 안내해 드립니다.
               </p>
+            </div>
+
+            {/* Asian Professional Badge - Updated with reliable URL */}
+            <div className="flex items-center space-x-4 p-4 bg-white/5 rounded-2xl border border-white/10 w-fit">
+              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-emerald">
+                <img 
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=200" 
+                  alt="Korean Counselor" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <p className="text-xs text-brand-emerald font-bold">1:1 맞춤 상담 서비스</p>
+                <p className="text-sm font-medium">실시간 상담 가능 (평일 09:00 - 18:00)</p>
+              </div>
             </div>
 
             <div className="space-y-6">
@@ -91,21 +105,10 @@ const ContactForm: React.FC = () => {
                   <p className="text-xl font-medium text-white">{COMPANY_INFO.email}</p>
                 </div>
               </div>
-
-              <div className="flex items-start space-x-6">
-                <div className="w-12 h-12 bg-brand-green/10 rounded-full flex items-center justify-center text-brand-emerald flex-shrink-0">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-400 mb-1">본사/1공장 주소</p>
-                  <p className="text-lg font-medium text-white">{COMPANY_INFO.factories[0].address}</p>
-                </div>
-              </div>
             </div>
           </div>
 
           <div className="bg-zinc-900/50 p-8 md:p-12 rounded-3xl border border-white/5 relative overflow-hidden">
-            {/* Success Overlay */}
             {status === 'success' && (
               <div className="absolute inset-0 bg-brand-black/90 z-10 flex flex-col items-center justify-center text-center p-8 animate-fadeIn">
                 <CheckCircle size={64} className="text-brand-emerald mb-6" />
@@ -181,7 +184,7 @@ const ContactForm: React.FC = () => {
                 <textarea 
                   name="message"
                   rows={4} 
-                  placeholder="세탁 규모나 특이사항을 적어주세요."
+                  placeholder="상담을 위해 내용을 남겨주세요."
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-brand-emerald outline-none transition-all resize-none"
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
@@ -189,23 +192,13 @@ const ContactForm: React.FC = () => {
                 ></textarea>
               </div>
 
-              {status === 'error' && (
-                <div className="flex items-center space-x-2 text-red-500 bg-red-500/10 p-4 rounded-xl border border-red-500/20">
-                  <AlertCircle size={20} />
-                  <span className="text-sm">전송 중 오류가 발생했습니다. 다시 시도해 주세요.</span>
-                </div>
-              )}
-
               <button 
                 type="submit" 
                 disabled={status === 'submitting'}
-                className={`w-full py-4 bg-brand-emerald hover:bg-brand-green text-white font-bold rounded-xl transition-all flex items-center justify-center space-x-2 shadow-lg shadow-brand-green/20 ${status === 'submitting' ? 'opacity-70 cursor-not-allowed' : ''}`}
+                className="w-full py-4 bg-brand-emerald hover:bg-brand-green text-white font-bold rounded-xl transition-all flex items-center justify-center space-x-2"
               >
                 {status === 'submitting' ? (
-                  <>
-                    <Loader2 size={18} className="animate-spin" />
-                    <span>전송 중...</span>
-                  </>
+                  <Loader2 size={18} className="animate-spin" />
                 ) : (
                   <>
                     <span>견적 요청하기</span>
