@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Procam (프로캠) - Premium Laundry Service",
+  "description": "Premium industrial and luxury laundry service provider website with a modern dark theme and deep green accents.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
