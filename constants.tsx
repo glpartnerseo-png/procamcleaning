@@ -52,7 +52,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     category: '전문기술',
     title: '30년 경력 마스터의 복원',
     description: '정교한 수작업으로 되살리는 의류 본연의 가치',
-    imageUrl: 'https://images.unsplash.com/photo-1556761175-5973cf0f32e7?auto=format&fit=crop&q=80&w=800' // Asian professional business
+    imageUrl: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&q=80&w=800' // High-quality Asian craft/professional feel
   },
   {
     id: 'p3',
@@ -65,7 +65,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     id: 'p4',
     category: '인프라',
     title: '최첨단 스마트 세탁 팩토리',
-    description: '친환경 세제와 고온 스팀 시스템이 결합된 위생적 환경',
+    description: '친환경 세제가와 고온 스팀 시스템이 결합된 위생적 환경',
     imageUrl: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800'
   }
 ];

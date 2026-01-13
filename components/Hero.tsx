@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
         <img 
           src="https://images.unsplash.com/photo-1582733775062-eb9217dfd541?auto=format&fit=crop&q=80&w=2000" 
           alt="Professional Laundry Facility" 
-          className="w-full h-full object-cover brightness-[0.35]"
+          className="w-full h-full object-cover brightness-[0.3]"
         />
         <div className="absolute inset-0 hero-gradient"></div>
       </div>
@@ -54,13 +54,13 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute bottom-12 right-12 hidden lg:flex space-x-12">
-        <div className="flex flex-col">
+      {/* Decorative Bottom Stats */}
+      <div className="absolute bottom-12 right-12 hidden lg:flex space-x-12 animate-fadeInUp">
+        <div className="flex flex-col border-l border-brand-emerald pl-4">
           <span className="text-4xl font-bold text-brand-emerald">30yr</span>
-          <span className="text-xs text-gray-400 uppercase tracking-widest mt-1">Expertise</span>
+          <span className="text-xs text-gray-400 uppercase tracking-widest mt-1">Expert Mastery</span>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col border-l border-brand-emerald pl-4">
           <span className="text-4xl font-bold text-brand-emerald">100k+</span>
           <span className="text-xs text-gray-400 uppercase tracking-widest mt-1">Monthly Capacity</span>
         </div>
